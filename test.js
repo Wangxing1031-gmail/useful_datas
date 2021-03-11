@@ -1,4 +1,4 @@
-
+// Find element in Google search console with class name and role attribute, event fire 'click' 
 var url_input = document.querySelectorAll("div.ziL9ec.C6efae input.whsOnd.zHQkBf")[0];
 url_input.value = "http://asd.natureandpeople.online";
 var btn = document.querySelectorAll("div.ziL9ec.C6efae div[role=button]")[0];
@@ -14,8 +14,7 @@ function eventFire(el, etype){
 }
 eventFire(btn, 'click');
 
-// find the div that's innerHTML is "URL prefix "
-
+// find the div that's innerHTML is "URL prefix", get the next sibling elements, event fire 'click'
 
 function eventFire(el, etype){
     if (el.fireEvent) {
