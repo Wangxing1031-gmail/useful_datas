@@ -46,3 +46,27 @@ for( var i = 0; i < url_prefix_list.length; i++){
     }
 }
 
+// click Search property
+function eventFire(el, etype){
+    if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+    } else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, true);
+        el.dispatchEvent(evObj);
+    }
+}
+var main_menu_list = document.querySelectorAll("div[role='button'][aria-label='Main menu']");
+var main_menu = main_menu_list[0];
+if( main_menu.getAttribute('aria-expanded') == 'false'){
+    eventFire( main_menu, 'click');
+    setTimeout(function(){
+        var btn_search_list = document.querySelectorAll("div[role='button'][aria-label='Search property']");
+        var btn = btn_search_list[0];
+        eventFire(btn, 'click');
+    }, 1000);
+} else {
+    var btn_search_list = document.querySelectorAll("div[role='button'][aria-label='Search property']");
+    var btn = btn_search_list[0];
+    eventFire(btn, 'click');
+}
